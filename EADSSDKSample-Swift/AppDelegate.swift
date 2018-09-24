@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EadsSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let config = ARConfig(appToken: "pub1", environment: .Sandbox)
+        EadsAd.didLaunch(with: config)
+        
         return true
     }
 
